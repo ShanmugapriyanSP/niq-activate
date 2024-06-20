@@ -7,21 +7,25 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "product")
+@Table(name = "shopper_products")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Builder
-public class Product {
-
+public class ShopperProduct {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true, name = "product_id")
-    private String productId;
+    @ManyToOne
+    @JoinColumn(name = "shopper_id")
+    private Shopper shopper;
 
-    private String category;
-    private String brand;
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    private Product product;
+
+    private double relevancyScore;
 
 }
+

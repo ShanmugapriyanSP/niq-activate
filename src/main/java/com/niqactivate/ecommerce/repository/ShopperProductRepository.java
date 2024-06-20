@@ -1,11 +1,10 @@
 package com.niqactivate.ecommerce.repository;
 
-import com.niqactivate.ecommerce.model.Product;
+import com.niqactivate.ecommerce.model.ShopperProduct;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ProductRepository extends JpaRepository<Product, Long>, JpaSpecificationExecutor<Product> {
-    Product findByProductId(String productId);
+public interface ShopperProductRepository extends JpaRepository<ShopperProduct, Long>, JpaSpecificationExecutor<ShopperProduct> {
 }
